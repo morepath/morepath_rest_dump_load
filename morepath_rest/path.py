@@ -7,7 +7,8 @@ def get_customer_collection():
     return customer_collection
 
 
-@App.path(model=Customer, path='customers/{id}')
+@App.path(model=Customer, path='customers/{id}',
+          converters={'id': int})
 def get_customer(id):
     return customer_collection.get(id)
 
