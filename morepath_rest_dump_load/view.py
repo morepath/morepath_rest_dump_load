@@ -1,6 +1,6 @@
 import morepath
 from .model import CustomerCollection, Customer, Root
-from .main import App
+from .app import App
 
 
 @App.dump_json(model=Customer)
@@ -9,7 +9,7 @@ def dump_customer(self, request):
         '@type': 'Customer',
         '@id': self.id,
         'name': self.name
-     }
+    }
 
 
 @App.dump_json(model=CustomerCollection)
@@ -22,6 +22,7 @@ def dump_customer_collection(self, request):
         ],
         'add': request.link(self),
     }
+
 
 @App.load_json()
 def load_customer(json, request):

@@ -1,4 +1,4 @@
-from .main import App
+from .app import App
 from .model import Customer, CustomerCollection, Root, customer_collection
 
 
