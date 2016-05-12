@@ -37,7 +37,7 @@ def test_customer():
     response = c.get('/customers/0')
     assert response.json == new_customer_response
 
-    c.post_json('/customers', {'@type': 'NoCustomer', 'name': 'Anne'}, status=422)
+    c.post_json('/customers', {'@type': 'Other', 'name': 'Anne'}, status=422)
 
 
 def test_root():
