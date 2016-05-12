@@ -7,7 +7,7 @@ from .app import App
 def dump_customer(self, request):
     return {
         '@type': 'Customer',
-        '@id': self.id,
+        '@id': request.link(self),
         'name': self.name
     }
 
