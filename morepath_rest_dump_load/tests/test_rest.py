@@ -5,7 +5,6 @@ from webtest import TestApp as Client
 
 
 def setup_module(module):
-    morepath.disable_implicit()
     morepath.scan(morepath_rest_dump_load)
     morepath.commit(App)
 
