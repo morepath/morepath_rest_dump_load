@@ -6,7 +6,7 @@ CHANGES
 
 - Updated test suite to work with Morepath 0.15.
 
-- Make Python 3.5 the default testing environment.
+- Update supported Python versions.
 
 
 0.1 (2016-07-01)
