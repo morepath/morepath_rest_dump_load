@@ -1,5 +1,6 @@
-import morepath
+from more.body_model import BodyModelApp
 
 
-class App(morepath.App):
+class App(BodyModelApp):
+    """help"""
     pass
