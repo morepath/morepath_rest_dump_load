@@ -26,6 +26,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'morepath>=0.14',
+        'more.body_model',
     ],
     extras_require=dict(
         test=[
