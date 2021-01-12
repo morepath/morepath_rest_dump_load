@@ -8,7 +8,7 @@ CHANGES
 
 - Update supported Python versions.
 
-- Use pre-commit, black, pyupgrade
+- Use pre-commit, black, pyupgrade.
 
 - Use GitHub Actions instead of Travis CI
 (Travis no longer supports open source projects).
