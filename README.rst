@@ -1,3 +1,17 @@
+.. image:: https://github.com/morepath/morepath_rest_dump_load/workflows/CI/badge.svg?branch=master
+   :target: https://github.com/morepath/morepath_rest_dump_load/actions?workflow=CI
+   :alt: CI Status
+
+.. image:: https://coveralls.io/repos/github/morepath/morepath_rest_dump_load/badge.svg?branch=master
+    :target: https://coveralls.io/github/morepath/morepath_rest_dump_load?branch=master
+
+.. image:: https://img.shields.io/pypi/v/morepath_rest_dump_load.svg
+  :target: https://pypi.org/project/morepath_rest_dump_load/
+
+.. image:: https://img.shields.io/pypi/pyversions/morepath_static.svg
+  :target: https://pypi.org/project/morepath_rest_dump_load/
+
+
 Morepath RESTful HTTP API demo
 ==============================
 

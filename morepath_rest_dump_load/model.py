@@ -1,10 +1,10 @@
-class Customer(object):
+class Customer:
     def __init__(self, name):
         self.id = None  # we will set it after creation
         self.name = name
 
 
-class CustomerCollection(object):
+class CustomerCollection:
     def __init__(self):
         self.customers = {}
         self.id_counter = 0
@@ -25,5 +25,5 @@ customer_collection = CustomerCollection()
 
 
 # a simple root model so we can have a view for /
-class Root(object):
+class Root:
     pass

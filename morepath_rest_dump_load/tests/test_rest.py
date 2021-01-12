@@ -12,34 +12,34 @@ def setup_module(module):
 def test_customers():
     c = Client(App())
 
-    collection_response = c.get('/customers')
+    collection_response = c.get("/customers")
     assert collection_response.json == {
         "customers": [],
         "add": "http://localhost/customers",
         "@id": "http://localhost/customers",
-        "@type": "CustomerCollection"
+        "@type": "CustomerCollection",
     }
 
 
 def test_customer():
     c = Client(App())
 
-    response = c.post_json('/customers', {'@type': 'Customer', 'name': 'Lisa'})
+    response = c.post_json("/customers", {"@type": "Customer", "name": "Lisa"})
 
     new_customer_response = {
         "@id": "http://localhost/customers/0",
         "@type": "Customer",
-        "name": "Lisa"
+        "name": "Lisa",
     }
     assert response.json == new_customer_response
 
-    response = c.get('/customers/0')
+    response = c.get("/customers/0")
     assert response.json == new_customer_response
 
-    c.post_json('/customers', {'@type': 'Other', 'name': 'Anne'}, status=422)
+    c.post_json("/customers", {"@type": "Other", "name": "Anne"}, status=422)
 
 
 def test_root():
     c = Client(App())
 
-    c.get('/', status=302)
+    c.get("/", status=302)
