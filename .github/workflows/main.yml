@@ -42,11 +42,9 @@ jobs:
       - name: "Run tox targets for ${{ matrix.python-version }}"
         run: "python -m tox"
 
-      - name: Run tests
-        run: pytest --cov=morepath_rest_dump_load/tests/ --cov-report xml
-
       - name: "Report to coveralls"
         if: "matrix.python-version == '3.9'"
+        run: pytest --cov=morepath_rest_dump_load/tests/ --cov-report xml
       #   # coverage is only created in the py39 environment
       #   # --service=github is a workaround for bug
       #   # https://github.com/coveralls-clients/coveralls-python/issues/251
