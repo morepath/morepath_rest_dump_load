@@ -28,6 +28,7 @@ jobs:
       - uses: "actions/setup-python@v2"
         with:
           python-version: "${{ matrix.python-version }}"
+
       - name: "Install dependencies"
         run: |
           set -xe
@@ -35,8 +36,14 @@ jobs:
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install --upgrade virtualenv tox tox-gh-actions
+          pip install pytest
+          pip install coveralls
+
       - name: "Run tox targets for ${{ matrix.python-version }}"
         run: "python -m tox"
+
+      - name: Run tests
+        run: pytest --cov=morepath_rest_dump_load/tests/ --cov-report xml
 
       - name: "Report to coveralls"
       #   # coverage is only created in the py39 environment
@@ -44,6 +51,4 @@ jobs:
       #   # https://github.com/coveralls-clients/coveralls-python/issues/251
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pip install coveralls
-          coveralls --service=github
+        run: coveralls --service=github
