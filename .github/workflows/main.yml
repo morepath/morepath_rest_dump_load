@@ -47,6 +47,4 @@ jobs:
         if: matrix.python-version == 3.9
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          pytest --cov=morepath_rest_dump_load/tests/ --cov-report xml
-          coveralls debug --service=github
+        run: coveralls debug --service=github
