@@ -44,7 +44,7 @@ jobs:
         run: "python -m tox"
 
       - name: "Report to coveralls"
-        if: "matrix.python-version == '3.9'"
+          if: "matrix.python-version == '3.9'"
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             run: |
