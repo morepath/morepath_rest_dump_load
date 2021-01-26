@@ -36,6 +36,7 @@ jobs:
           python -m site
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install --upgrade virtualenv tox tox-gh-actions
+          pip install pytest-cov
           pip install pytest
           pip install coveralls
 
@@ -50,4 +51,4 @@ jobs:
       #   # https://github.com/coveralls-clients/coveralls-python/issues/251
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: coveralls --service=github
+          run: coveralls debug --service=github
