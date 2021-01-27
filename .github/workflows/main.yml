@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.9"]
+        python-version: ["3.6", "3.7", "3.8", "3.9", "pypy3"]
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -45,11 +45,6 @@ jobs:
         if: "matrix.python-version == '3.9'"
         run: |
           pip install coveralls
-          pip install coverage
-          pip install pytest
-          pip install webtest
-          pip install .
-          coverage run --source morepath_rest_dump_load -m py.test
           coveralls --service=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
