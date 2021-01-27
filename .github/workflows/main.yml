@@ -46,6 +46,7 @@ jobs:
         run: |
           pip install coveralls
           pip install coverage
+          pip install pytest
           coverage run --source morepath_rest_dump_load -m py.test {posargs}
           coveralls --service=github
         env:
