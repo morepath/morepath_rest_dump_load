@@ -45,6 +45,8 @@ jobs:
         if: "matrix.python-version == '3.9'"
         run: |
           pip install coveralls
+          pip install coverage
+          coverage run --source morepath_rest_dump_load -m py.test {posargs}
           coveralls --service=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
