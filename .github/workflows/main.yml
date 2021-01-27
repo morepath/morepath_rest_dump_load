@@ -47,7 +47,7 @@ jobs:
           pip install coveralls
           pip install coverage
           pip install pytest
-          coverage run --source morepath_rest_dump_load -m py.test {posargs}
+          coverage run --source morepath_rest_dump_load -m py.test
           coveralls --service=github
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
